@@ -18,25 +18,47 @@ Remotely connect via web to this table lamp webcam, equipped with an audio class
 
 # Hardware Components
 ### 0. [Raspberry PI Zero W]
+### 1. Raspberry PI Camera
 ### 1. DAC with PCM5102
 ### 2. Audio Ampilfier. I Chose a PAM8403 5V 3W Class D Audio Ampifier like [this](https://www.amazon.it/Muzoct-PAM8403-Digital-Amplificatore-Classe/dp/B07791Z9WC/ref=sr_1_14?keywords=pam8403&qid=1565554203&s=gateway&sr=8-14)
-#
+### 3. Amplified microphone
+### 4. USB Analog to Digital Converter (ADC) 
 
 # Prepare your Raspberry
-### 0. I used a [Raspberry PI 3 Model B Scheda madre CPU 1.2 GHz Quad Core, 1 GB RAM](https://www.amazon.it/gp/product/B01CD5VC92/ref=oh_aui_search_detailpage?ie=UTF8&psc=1) bought at Amazon
-### 1. Start from a clean sd: I tested 8M and 32M SD Samsung cards.
-### 2. Install "Raspbian Stretch with Desktop", I tested:
+### 0. Start from a clean sd: I tested 8M and 32M SD Samsung cards.
+### 1. Install "Raspbian Buster Lite", I tested:
    - Stretch "	2018-11-13-raspbian-stretch.zip" downloaded and with "installation guide" at [Download Raspbian Stretch](http://downloads.raspberrypi.org/raspbian/images/raspbian-2018-11-15/)
    - DON'T DON'T DON'T install any newer version of the Raspian Kernel than this (Linux 4.14). Otherwise IR infrared transmitter won't work! Never do "sudo apt-get upgrade"
 ### 3. (Optional, if you don't have screen, keyboard and mouse) Prepare the SD you just created for headless operations following these instructions. See also [Raspbian Stretch Headless Setup Procedure](https://www.raspberrypi.org/forums/viewtopic.php?t=191252) 
 
 # Install the USB camera and microphone
-### 0. I tested "Logitech C525" and "Trust SPOTLIGHT PRO" succesfully. Simply plug it into any USB port. Both have an integrated microphone but if yours doesn't have it, plug a USB microphone in any USB port.
-### 1. Test your USB webcam with chromium-browser navigating to a site like this [webrtc Hacks](https://webrtchacks.github.io/WebRTC-Camera-Resolution/)
-### 2. Test your USB microphone (integrated with the webcam or not) with chromium-browser navigating to https://www.google.com and using the speech recognition 
 
-# Install uv4l library
-Install the uv4l library. For details see also [UV4L for Raspberry PI Installation Procedure](https://www.linux-projects.org/uv4l/installation/) 
+# Install gstreamer package
+
+Install the gstreamer package. For details see also [Streaming Video Using gstreamer](https://raspberry-projects.com/pi/pi-hardware/raspberry-pi-camera/streaming-video-using-gstreamer) 
+You need to edit the sources.list file so enter:
+```
+sudo nano /etc/apt/sources.list
+```
+`
+```
+
+
+and add the following to the end of the file:
+```
+deb http://vontaene.de/raspbian-updates/ . main
+```
+Press CTRL+X to save and exit
+
+Now run an update (which will make use of the line just added):
+```
+sudo apt-get update 
+```
+
+Now install gstreamer
+
+
+sudo apt-get install gstreamer1.0
  
 ### 0. Add the uv4l repository to the list of apt repositories
 ```
