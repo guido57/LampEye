@@ -26,13 +26,37 @@ Remotely connect via web to this table lamp webcam, equipped with an audio class
 
 # Prepare your Raspberry
 ### 0. Start from a clean sd: I tested 8M and 32M SD Samsung cards.
-### 1. Install "Raspbian Buster Lite", I tested:
-   - Stretch "	2018-11-13-raspbian-stretch.zip" downloaded and with "installation guide" at [Download Raspbian Stretch](http://downloads.raspberrypi.org/raspbian/images/raspbian-2018-11-15/)
-   - DON'T DON'T DON'T install any newer version of the Raspian Kernel than this (Linux 4.14). Otherwise IR infrared transmitter won't work! Never do "sudo apt-get upgrade"
+### 1. Download and install [Raspbian Buster Lite](https://www.raspberrypi.org/downloads/raspbian/) following the official instructions
 ### 3. (Optional, if you don't have screen, keyboard and mouse) Prepare the SD you just created for headless operations following these instructions. See also [Raspbian Stretch Headless Setup Procedure](https://www.raspberrypi.org/forums/viewtopic.php?t=191252) 
 
-# Install the USB camera and microphone
+# Install the PI camera
+After connecting the PI camera to the Raspberry PI Zero W using the flex cable, enable the camera by raspi-config
+```
+sudo raspi-config
+```
+go to "Interfacing Options" / "Camera" / "Yes"
+then raspi-config automatically reboot
 
+
+# Install the USB microphone
+Plug your USB microphone to the Raspberry PI Zero W
+check if it is visible to the operating system entering
+```
+arecord -l
+```
+you should see something like this:
+```
+**** List of CAPTURE Hardware Devices ****
+card 1: AK5371 [AK5371], device 0: USB Audio [USB Audio]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+```
+that means that the my AK5371 USB microphon
+e is on card 1 
+therefore in gst2janus command you'll set 
+```
+... alsasrc device=hw:1 ! ...
+```
 # Install the gstreamer packages
 
 Install the gstreamer package. For details see also [Streaming Video Using gstreamer](https://raspberry-projects.com/pi/pi-hardware/raspberry-pi-camera/streaming-video-using-gstreamer) 
@@ -40,6 +64,8 @@ Install the gstreamer package. For details see also [Streaming Video Using gstre
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install gstreamer1.0-tools
+```
+
 sudo apt-get install gstreamer1.0-plugins-good
 sudo apt-get install gstreamer1.0-plugins-bad
 sudo apt-get install gstreamer1.0-omx
