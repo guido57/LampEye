@@ -18,8 +18,8 @@ Remotely connect via web to this table lamp webcam, equipped with an audio class
 
 # Hardware Components
 ### 0. [Raspberry PI Zero W]
-### 1. Raspberry PI Camera
-### 1. DAC with PCM5102
+### 1. [ Camera Module for Raspberry Pi Zero W 3 Model B B+ A+ 2 1 5MP 1080p OV5647 Sensor HD Video Webcam Night](https://www.amazon.it/gp/product/B0759NWTGC/ref=ppx_yo_dt_b_asin_title_o03_s00?ie=UTF8&psc=1)
+### 1. DAC with PCM5102[PCM5102 I2S IIS High Quality Lossless Digital Audio DAC](https://www.amazon.it/gp/product/B07QBY5Y9K/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1)
 ### 2. Audio Ampilfier. I Chose a PAM8403 5V 3W Class D Audio Ampifier like [this](https://www.amazon.it/Muzoct-PAM8403-Digital-Amplificatore-Classe/dp/B07791Z9WC/ref=sr_1_14?keywords=pam8403&qid=1565554203&s=gateway&sr=8-14)
 ### 3. Amplified microphone
 ### 4. USB Analog to Digital Converter (ADC) 
