@@ -33,30 +33,26 @@ Remotely connect via web to this table lamp webcam, equipped with an audio class
 
 # Install the USB camera and microphone
 
-# Install gstreamer package
+# Install the gstreamer packages
 
 Install the gstreamer package. For details see also [Streaming Video Using gstreamer](https://raspberry-projects.com/pi/pi-hardware/raspberry-pi-camera/streaming-video-using-gstreamer) 
-You need to edit the sources.list file so enter:
 ```
-sudo nano /etc/apt/sources.list
-```
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install gstreamer1.0-tools
+sudo apt-get install gstreamer1.0-plugins-good
+sudo apt-get install gstreamer1.0-plugins-bad
+sudo apt-get install gstreamer1.0-omx
+sudo apt-get install gstreamer1.0-alsa
 
-and add the following to the end of the file:
 ```
-deb http://vontaene.de/raspbian-updates/ . main
-```
-Press CTRL+X to save and exit
-Now run an update (which will make use of the line just added):
-```
-sudo apt-get update 
-```
+the package gstreamer1.0-plugins-good includes v42lsrc 
+the package gstreamer1.0-plugins-bad includes h264parse
+the package gstreamer1.0-omx includes omxh254enc
+the package gstreamer1.0-alsa includes alsasrc
 
-Now install gstreamer
-```
-sudo apt-get install gstreamer1.0
-``` 
-
-### 4. Test uv4l-server 
+### 4. Test gstreamer 
+Download the 
 Navigate to [http://localhost:8090](http://localhost:8090)
 This page should appear:
 [![](https://github.com/guido57/IReye/blob/master/screenshots/UV4L%20Streaming%20Server%20Home%20Page.PNG)](https://github.com/guido57/IReye/blob/master/screenshots/UV4L%20Streaming%20Server%20Home%20Page.PNG)
