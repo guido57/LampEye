@@ -40,41 +40,22 @@ You need to edit the sources.list file so enter:
 ```
 sudo nano /etc/apt/sources.list
 ```
-`
+
 ```
-
-
 and add the following to the end of the file:
 ```
 deb http://vontaene.de/raspbian-updates/ . main
 ```
 Press CTRL+X to save and exit
-
 Now run an update (which will make use of the line just added):
 ```
 sudo apt-get update 
 ```
 
 Now install gstreamer
-
-
+```
 sudo apt-get install gstreamer1.0
- 
-### 0. Add the uv4l repository to the list of apt repositories
-```
-$ curl http://www.linux-projects.org/listing/uv4l_repo/lpkey.asc | sudo apt-key add -
-```
-### 1. add the following line to the file /etc/apt/sources.list:
-```
-$ deb http://www.linux-projects.org/listing/uv4l_repo/raspbian/stretch stretch main
-```
-### 2. Install (or update if already installed):
-```
-$ sudo apt-get update
-$ sudo apt-get install uv4l uv4l-server uv4l-uvc uv4l-webrtc
-```
-### 3. reboot
-- After rebooting, uv4l is supposed to be installed and available for next use. 
+``` 
 
 ### 4. Test uv4l-server 
 Navigate to [http://localhost:8090](http://localhost:8090)
