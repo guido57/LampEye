@@ -41,7 +41,6 @@ You need to edit the sources.list file so enter:
 sudo nano /etc/apt/sources.list
 ```
 
-```
 and add the following to the end of the file:
 ```
 deb http://vontaene.de/raspbian-updates/ . main
