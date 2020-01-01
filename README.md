@@ -78,6 +78,22 @@ the package gstreamer1.0-omx includes omxh254enc
 the package gstreamer1.0-alsa includes alsasrc
 
 ### 4. Test gstreamer 
+
+
+### 5. Enable i2s and DAC audio output
+
+Add these lines at the end of /boot/config.txt
+```
+# enable audio via I2S to PCM5102 PCM5122
+dtoverlay=hifiberry-dac
+dtoverlay=i2s-mmap
+```
+and comment the line dtaparam=audio=on
+
+```
+# dtaparam=audio=on
+```
+
 Download the 
 Navigate to [http://localhost:8090](http://localhost:8090)
 This page should appear:
