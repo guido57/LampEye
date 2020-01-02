@@ -71,6 +71,7 @@ sudo apt-get install gstreamer1.0-plugins-good
 sudo apt-get install gstreamer1.0-plugins-bad
 sudo apt-get install gstreamer1.0-omx
 sudo apt-get install gstreamer1.0-alsa
+sudo apt-get install libgstreamer1.0-dev
 ```
 the package gstreamer1.0-plugins-good includes v42lsrc
 
@@ -79,6 +80,8 @@ the package gstreamer1.0-plugins-bad includes h264parse
 the package gstreamer1.0-omx includes omxh264enc
 
 the package gstreamer1.0-alsa includes alsasrc
+
+the package libgstreamer1.0-dev contains .h .so and all the useful things to compile gstreamer C code 
 
 ### 4. Test gstreamer 
 
