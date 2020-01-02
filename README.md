@@ -14,7 +14,7 @@ Remotely connect via web to this table lamp webcam, equipped with a loudspeaker 
 - See the logic diagram below also.
 
 # Logic diagram
-[![](https://github.com/guido57/IReye/blob/master/screenshots/IReye%20logic%20diagram.jpg)](https://github.com/guido57/IReye/blob/master/screenshots/IReye%20logic%20diagram.jpg)
+[![](https://github.com/guido57/LampEye/blob/master/screenshots/LampEye.png)](https://github.com/guido57/LampEye/blob/master/screenshots/LampEye.png)
 
 # Hardware Components
 0. [Raspberry PI Zero W]
