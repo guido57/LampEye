@@ -83,7 +83,7 @@ the package gstreamer1.0-alsa includes alsasrc
 ### 4. Test gstreamer 
 
 
-### 5. Enable i2s and DAC audio output
+# Enable i2s and DAC audio output
 
 Add these lines at the end of /boot/config.txt
 ```
@@ -105,6 +105,8 @@ Choose 1. if all your clients (PC's accessing LampEye) are inside the LAN itself
 Choose 2. otherwise. 
 
 # Create a gst2janus systemd service
+This step is necessary to have the streaming automatically start on Raspberry reboot
+
 1. Copy gst2janus.service into /etc/systemd/system/
 2. Start the gst2janus service 
 ```
@@ -137,9 +139,11 @@ In this way your LampEye can be reached using VNC or SSH and properly configured
 
 Follow this instructions [Set a Raspberry WIFI hotspot (access point) and client](https://github.com/guido57/Raspberry-WIFI-hotspot)
  
-# Infrared TX & RX schematic
-[![](https://github.com/guido57/IReye/blob/master/screenshots/IR_TX_RX.PNG)](https://github.com/guido57/IReye/blob/master/screenshots/IR_TX_RX.PNG)
+# Activate a monitoring system - OPTIONAL
+Using a few colored LED's you can have a useful diagnostic system
+------------|------------
+- LED COLOR - ciao
+
 
 # Screenshots
 
-# Logic Diagram 
