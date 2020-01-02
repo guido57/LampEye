@@ -99,9 +99,10 @@ and comment the line dtaparam=audio=on
 # Setup a Janus Gateway instance
 You have two main options:
 1. install Janus in your private LAN, in one of your PC's inside your LAN
-2. install Janus on a public server, on Internet 
+2. install Janus on a public server, on Internet. See []()
+
 Choose 1. if all your clients (PC's accessing LampEye) are inside the LAN itself. A client on Internet could access it, but you have to open ports in your router and setup a dynamic DNS
-Choose 2. otherwise.
+Choose 2. otherwise. 
 
 # Create a gst2janus systemd service
 1. Copy gst2janus.service into /etc/systemd/system/
