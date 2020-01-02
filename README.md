@@ -141,8 +141,14 @@ Follow this instructions [Set a Raspberry WIFI hotspot (access point) and client
  
 # Activate a monitoring system - OPTIONAL
 Using a few colored LED's you can have a useful diagnostic system
-------------|------------
-- LED COLOR - ciao
+
+| LED color | Description | 
+| --- | --- |
+| green | microphone audio level |
+| blue  | WIFI signal strength   |
+| yellow | CPU temperature |
+| white | janus streaming on line|
+
 
 
 # Screenshots
