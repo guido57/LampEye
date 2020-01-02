@@ -17,17 +17,17 @@ Remotely connect via web to this table lamp webcam, equipped with a loudspeaker 
 [![](https://github.com/guido57/IReye/blob/master/screenshots/IReye%20logic%20diagram.jpg)](https://github.com/guido57/IReye/blob/master/screenshots/IReye%20logic%20diagram.jpg)
 
 # Hardware Components
-### 0. [Raspberry PI Zero W]
-### 1. [ Camera Module for Raspberry Pi Zero W 3 Model B B+ A+ 2 1 5MP 1080p OV5647 Sensor HD Video Webcam Night](https://www.amazon.it/gp/product/B0759NWTGC/ref=ppx_yo_dt_b_asin_title_o03_s00?ie=UTF8&psc=1)
-### 1. DAC with PCM5102[PCM5102 I2S IIS High Quality Lossless Digital Audio DAC](https://www.amazon.it/gp/product/B07QBY5Y9K/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1)
-### 2. Audio Ampilfier. I Chose a PAM8403 5V 3W Class D Audio Ampifier like [this](https://www.amazon.it/Muzoct-PAM8403-Digital-Amplificatore-Classe/dp/B07791Z9WC/ref=sr_1_14?keywords=pam8403&qid=1565554203&s=gateway&sr=8-14)
-### 3. Amplified microphone
-### 4. USB Analog to Digital Converter (ADC) 
+0. [Raspberry PI Zero W]
+1. [ Camera Module for Raspberry Pi Zero W 3 Model B B+ A+ 2 1 5MP 1080p OV5647 Sensor HD Video Webcam Night](https://www.amazon.it/gp/product/B0759NWTGC/ref=ppx_yo_dt_b_asin_title_o03_s00?ie=UTF8&psc=1)
+2. DAC with PCM5102[PCM5102 I2S IIS High Quality Lossless Digital Audio DAC](https://www.amazon.it/gp/product/B07QBY5Y9K/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1)
+3. Audio Ampilfier. I Chose a PAM8403 5V 3W Class D Audio Ampifier like [this](https://www.amazon.it/Muzoct-PAM8403-Digital-Amplificatore-Classe/dp/B07791Z9WC/ref=sr_1_14?keywords=pam8403&qid=1565554203&s=gateway&sr=8-14)
+4. Amplified microphone
+5. USB Analog to Digital Converter (ADC) 
 
 # Prepare your Raspberry
-### 0. Start from a clean sd: I tested 8M and 32M SD Samsung cards.
-### 1. Download and install [Raspbian Buster Lite](https://www.raspberrypi.org/downloads/raspbian/) following the official instructions
-### 3. (Optional, if you don't have screen, keyboard and mouse) Prepare the SD you just created for headless operations following these instructions. See also [Raspbian Stretch Headless Setup Procedure](https://www.raspberrypi.org/forums/viewtopic.php?t=191252) 
+0. Start from a clean sd: I tested 8M and 32M SD Samsung cards.
+1. Download and install [Raspbian Buster Lite](https://www.raspberrypi.org/downloads/raspbian/) following the official instructions
+2. (Optional, if you don't have screen, keyboard and mouse) Prepare the SD you just created for headless operations following these instructions. See also [Raspbian Stretch Headless Setup Procedure](https://www.raspberrypi.org/forums/viewtopic.php?t=191252) 
 
 # Install the PI camera
 After connecting the PI camera to the Raspberry PI Zero W using the flex cable, enable the camera by raspi-config
