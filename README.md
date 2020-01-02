@@ -65,11 +65,11 @@ sudo apt-get upgrade
 sudo apt-get install gstreamer1.0-tools
 ```
 
+```
 sudo apt-get install gstreamer1.0-plugins-good
 sudo apt-get install gstreamer1.0-plugins-bad
 sudo apt-get install gstreamer1.0-omx
 sudo apt-get install gstreamer1.0-alsa
-
 ```
 the package gstreamer1.0-plugins-good includes v42lsrc 
 the package gstreamer1.0-plugins-bad includes h264parse
@@ -95,9 +95,8 @@ and comment the line dtaparam=audio=on
 
 # Create a gst2janus systemd service
 ### 1. Copy gst2janus.service into /etc/systemd/system/
-```
-sudo touch IRsend.log
-```
+
+
 ### 3. Assign ownership to the standard user "pi" 
 ```
 sudo chown pi: IRsend.log
