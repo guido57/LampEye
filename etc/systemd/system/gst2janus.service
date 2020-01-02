@@ -1,0 +1,14 @@
+[Unit]
+Description=streaming audio and video to janus gateway server via RTP
+After=getty.target
+
+[Service]
+ExecStart=/home/pi/gst2janus/gst2janus
+WorkingDirectory=/home/pi/gst2janus/
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
