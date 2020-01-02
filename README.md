@@ -52,6 +52,7 @@ card 1: AK5371 [AK5371], device 0: USB Audio [USB Audio]
   Subdevice #0: subdevice #0
 ```
 in this case,  my AK5371 USB microphone is on card 1 
+
 therefore in gst2janus command you'll set 
 ```
 ... alsasrc device=hw:1 ! ...
@@ -71,9 +72,12 @@ sudo apt-get install gstreamer1.0-plugins-bad
 sudo apt-get install gstreamer1.0-omx
 sudo apt-get install gstreamer1.0-alsa
 ```
-the package gstreamer1.0-plugins-good includes v42lsrc 
+the package gstreamer1.0-plugins-good includes v42lsrc
+
 the package gstreamer1.0-plugins-bad includes h264parse
+
 the package gstreamer1.0-omx includes omxh264enc
+
 the package gstreamer1.0-alsa includes alsasrc
 
 ### 4. Test gstreamer 
