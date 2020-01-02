@@ -98,18 +98,12 @@ and comment the line dtaparam=audio=on
 ```
 
 # Create a gst2janus systemd service
-### 1. Copy gst2janus.service into /etc/systemd/system/
-
-
-### 3. Assign ownership to the standard user "pi" 
+1. Copy gst2janus.service into /etc/systemd/system/
+2. Start the gst2janus service 
 ```
-sudo chown pi: IRsend.log
+sudo systemctl start gst2janus
 ```
-### 4. Start the IRsend service 
-```
-sudo systemctl start IRsend
-```
-### 5. Check if IRsend service started correctly.
+3. Check if gst2janus service started correctly.
 
 You should see something like this:
 ```
@@ -123,17 +117,13 @@ pi@raspberrypi:/usr/share/uv4l/www $ sudo systemctl status IRsend
 
 Aug 09 21:24:07 raspberrypi systemd[1]: Started Flask web app to send IR commands to a TV.
 ```
-### 6. Now enable IRsend service, so that it will start automatically on boot
+4. Now enable gstjanus service, so that it will start automatically on boot
 ```
-sudo systemctl stop IRsend
-sudo systemctl enable IRsend
+sudo systemctl enable gst2janus
 ```
-# Test the WebRtcIR.html website
-Navigate to: https://localhost/webrtcir.html:8092
-
 
 # Activate a WIFI hotspot (access point) - OPTIONAL
-In this way your IReye can be reached using VNC or SSH and properly configured.
+In this way your LampEye can be reached using VNC or SSH and properly configured.
 
 Follow this instructions [Set a Raspberry WIFI hotspot (access point) and client](https://github.com/guido57/Raspberry-WIFI-hotspot)
  
