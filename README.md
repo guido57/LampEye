@@ -96,6 +96,12 @@ and comment the line dtaparam=audio=on
 ```
 # dtaparam=audio=on
 ```
+# Setup a Janus Gateway instance
+You have two main options:
+1. install Janus in your private LAN, in one of your PC's inside your LAN
+2. install Janus on a public server, on Internet 
+Choose 1. if all your clients (PC's accessing LampEye) are inside the LAN itself. A client on Internet could access it, but you have to open ports in your router and setup a dynamic DNS
+Choose 2. otherwise.
 
 # Create a gst2janus systemd service
 1. Copy gst2janus.service into /etc/systemd/system/
@@ -107,20 +113,23 @@ sudo systemctl start gst2janus
 
 You should see something like this:
 ```
-pi@raspberrypi:/usr/share/uv4l/www $ sudo systemctl status IRsend
-● IRsend.service - Flask web app to send IR commands to a TV
-   Loaded: loaded (/etc/systemd/system/IRsend.service; disabled; vendor preset: enabled)
-   Active: active (running) since Fri 2019-08-09 21:24:07 BST; 7ms ago
- Main PID: 6556 (python)
-   CGroup: /system.slice/IRsend.service
-           └─6556 /usr/bin/python IRsend.py > IRsend.log 2>&1
+● gst2janus.service - streaming audio and video to janus gateway server via RTP
+   Loaded: loaded (/etc/systemd/system/gst2janus.service; disabled; vendor preset: enabled)
+   Active: active (running) since Thu 2020-01-02 10:19:57 GMT; 415ms ago
+ Main PID: 1599 (gst2janus)
+   Memory: 708.0K
+   CGroup: /system.slice/gst2janus.service
+           ├─1599 /bin/sh /home/pi/gst2janus/gst2janus
+           └─1601 gst-launch-1.0 -v v4l2src device=/dev/video0 ! video/x-raw,width=320,height=240,framerate=4/1 !
 
-Aug 09 21:24:07 raspberrypi systemd[1]: Started Flask web app to send IR commands to a TV.
+Jan 02 10:19:57 raspberrypi systemd[1]: Started streaming audio and video to janus gateway server via RTP.
 ```
 4. Now enable gstjanus service, so that it will start automatically on boot
 ```
 sudo systemctl enable gst2janus
 ```
+5. Check if your janus gateway is receiving the audio and video RTP streams
+
 
 # Activate a WIFI hotspot (access point) - OPTIONAL
 In this way your LampEye can be reached using VNC or SSH and properly configured.
