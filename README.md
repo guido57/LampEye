@@ -142,12 +142,20 @@ Follow this instructions [Set a Raspberry WIFI hotspot (access point) and client
 # Activate a monitoring system - OPTIONAL
 Using a few colored LED's you can have a useful diagnostic system
 
+### LED's table
+
 | LED color | Description | 
 | --- | --- |
 | green | microphone audio level |
 | blue  | WIFI signal strength   |
 | yellow | CPU temperature |
 | white | janus streaming on line|
+
+### Installing wiringPI (python and C libraries)
+```
+sudo apt-get install wiringpi
+```
+### Activate the monitoring.py python program
 
 
 
